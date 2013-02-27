@@ -1,0 +1,10 @@
+#!/var/www/envs/alerts_django/bin/python
+# EASY-INSTALL-ENTRY-SCRIPT: 'fastpb==0.1','console_scripts','protoc-gen-fastpython'
+__requires__ = 'fastpb==0.1'
+import sys
+from pkg_resources import load_entry_point
+
+if __name__ == '__main__':
+    sys.exit(
+        load_entry_point('fastpb==0.1', 'console_scripts', 'protoc-gen-fastpython')()
+    )
