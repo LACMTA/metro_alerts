@@ -1,0 +1,46 @@
+{% load trim %}header {
+	gtfs_realtime_version: "1.0"
+	incrementality: FULL_DATASET
+	timestamp: {{timestamp}}
+}{% for alert in allalerts %}
+entity {
+	id: "{{ alert.id }}"
+	alert {
+		active_period {
+			start: {{ alert.active_period.start }}
+			end: {{ alert.active_period.end }}
+		}{% if alert.routes %}{% for route in alert.routes.values %}
+		informed_entity {
+			route_id: "{{ route.route_id }}"
+		}
+	{% endfor %}{% endif %}{% if alert.stops %}{% for stop in alert.stops.values %}
+		informed_entity {
+			stop_id: "{{ stop.stop_id }}"
+		}
+	{% endfor %}{% endif %}{% if alert.trips %}{% for trip in alert.trips.values %}
+		informed_entity {
+			trip_id: "{{ trip.stop_id }}"
+		}
+	{% endfor %}{% endif %}
+		cause: {{ alert.causeText|upper }}
+		effect: {{ alert.effectText|upper }}
+		url {
+			translation {
+				text: "http://www.metro.net/alerts"
+				language: "en"
+			}
+		}
+		header_text {
+			translation {
+				text: "{{ alert.header_text|spotless|slice:":999" }}"
+				language: "en"
+			}
+		}
+		description_text {
+			translation {
+				text: "{{ alert.description_text|spotless|slice:":999" }}"
+				language: "en"
+			}
+		}
+	}
+}{% endfor %}

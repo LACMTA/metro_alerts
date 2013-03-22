@@ -1,0 +1,46 @@
+header {
+  gtfs_realtime_version: "1.0"
+  incrementality: FULL_DATASET
+  timestamp: {{timestamp}}
+}
+{% for alert in allalerts %}
+entity {
+  id: {{ alert.id }}
+  alert: {
+    active_period {
+      start: {{ alert.active_period.start }}
+      end: {{ alert.active_period.end }}
+    }
+{% for route in alert.routes.values %}
+	informed_entity {
+	  route_id: "{{ route.route_id }}"
+	}
+{% endfor %}
+{% for stop in alert.stops.values %}
+	informed_entity {
+	  stop_id: "{{ stop.stop_id }}"
+	}
+{% endfor %}
+    cause: {{ alert.causeText }}
+    effect: {{ alert.effectText }}
+    url {
+      translation {
+        text: "http://www.metro.net/alerts"
+        language: "en"
+      }
+    }
+    header_text {
+      translation {
+        text: "{{ alert.header_text|escape }}"
+        language: "en"
+      }
+    }
+    description_text {
+      translation {
+        text: "{{ alert.description_text|escape }}"
+        language: "en"
+      }
+    }
+  }
+}
+{% endfor %}

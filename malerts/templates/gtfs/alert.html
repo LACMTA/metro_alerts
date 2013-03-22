@@ -1,0 +1,41 @@
+{% block maincontent %}
+alert :{{alert}}
+
+{% endblock %}
+
+
+<!--
+class Alert(models.Model):
+	# Collapsed TimeRange (we'll convert to utime in the view)
+	start = models.DateTimeField(default=datetime.datetime.now)
+	end = models.DateTimeField(default=datetime.datetime.now)
+	# models.IntegerField(('causes'), choices=CAUSES, default=1)
+	# cause = EnumField(choices=CAUSES)
+	# effect = EnumField(choices=EFFECTS)
+	cause = models.IntegerField(('causes'), choices=CAUSES, default=UNKNOWN_CAUSE)
+	effect = models.IntegerField(('effects'), choices=EFFECTS, default=NO_SERVICE)
+	url = models.URLField(default="http://www.metro.net/alerts")
+	header_text = models.CharField(max_length=80, default="")
+	# description_text = models.TextField(max_length=1000, null=True, blank=True)
+	description_text = RichTextField(blank=True, verbose_name='HTML description', max_length=1000, )
+	# entities
+	routes = models.ManyToManyField(Route, null=True, blank=True)
+	trips = models.ManyToManyField(Trip, null=True, blank=True)
+	stops = models.ManyToManyField(Stop, null=True, blank=True)
+	
+	def __unicode__(self):
+		return self.header_text
+
+	def causeText(self):
+		return CAUSES[self.cause][1]
+
+	def effectText(self):
+		return EFFECTS[self.effect][1]
+
+	def active_period(self):
+		time_range = {
+			'start': self.start.strftime('%s'),
+			'end':	self.end.strftime('%s')
+			}
+		return (time_range)
+-->
