@@ -99,10 +99,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.sites',
     'django.contrib.staticfiles',
-    'devserver',
-    'djsupervisor',
     'gtfs',
-    'gunicorn',
     'south',
     'tastypie',
     'backbone_tastypie',
@@ -142,7 +139,7 @@ DJANGO_WYSIWYG_FLAVOR = 'ckeditor'  # Requires you to also place the ckeditor fi
 DJANGO_WYSIWYG_MEDIA_URL = STATIC_URL + "ckeditor/"
 
 # DJANGO-CKEDITOR
-CKEDITOR_UPLOAD_PATH = "/var/www/envs/alerts_django/media/uploads"
+CKEDITOR_UPLOAD_PATH = "/var/www/metro_alerts/media/uploads"
 CKEDITOR_UPLOAD_PREFIX = "http://alerts.metro.net/media/uploads/"
 CKEDITOR_CONFIGS = {
 	'default': {
