@@ -8,7 +8,7 @@ Vagrant.configure("2") do |config|
   #
   config.omnibus.chef_version = :latest
 
-  config.vm.hostname = "metro_alerts-berkshelf"
+  config.vm.hostname = "metro-alerts-berkshelf"
 
   # Every Vagrant virtual environment requires a box to build off of.
   config.vm.box = "opscode_ubuntu-12.04_provisionerless.box"
@@ -37,7 +37,7 @@ Vagrant.configure("2") do |config|
   # the path on the host to the actual folder. The second argument is
   # the path on the guest to mount the folder. And the optional third
   # argument is a set of non-required options.
-  # config.vm.synced_folder "../data", "/vagrant_data"
+  config.vm.synced_folder ".", "/var/www/metro_alerts/current"
 
   # Provider-specific configuration so you can fine-tune various
   # backing providers for Vagrant. These expose provider-specific options.
