@@ -1,4 +1,7 @@
-# Django settings for malerts project.
+import os
+import sys
+
+PROJECT_ROOT = os.path.dirname(os.path.dirname(__file__))
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
@@ -20,6 +23,8 @@ DATABASES = {
         'OPTIONS': { 'init_command': 'SET storage_engine=MYISAM;' },	# This is SPATIAL INDEXES
     }	
 }
+
+GEOS_LIBRARY_PATH = "/usr/local/lib/libgeos_c.so"
 
 # Local time zone for this installation. Choices can be found here:
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
@@ -81,7 +86,7 @@ MIDDLEWARE_CLASSES = (
 ROOT_URLCONF = 'malerts.urls'
 
 TEMPLATE_DIRS = (
-	'/var/www/envs/alerts_django/malerts/templates',
+    os.path.join(PROJECT_ROOT, 'templates'),
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.

@@ -5,8 +5,8 @@ from gtfs.models import Alert, Agency, Zone, Stop, RouteType, Route, Service, Di
 from gtfs.models import Block, Shape, Trip, PickupType, DropOffType, StopTime, Calendar, ExceptionType
 from gtfs.models import CalendarDate, Fare, PaymentMethod, FareAttribute, FareRule, Frequency, Transfer
 									
-admin.site.register(Stop, admin.OSMGeoAdmin) 
-admin.site.register(Shape, admin.OSMGeoAdmin)
+#admin.site.register(Stop, admin.OSMGeoAdmin) 
+#admin.site.register(Shape, admin.OSMGeoAdmin)
 
 """
 class AlertAdmin(admin.TabularInline):
