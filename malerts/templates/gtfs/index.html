@@ -31,7 +31,7 @@
 		});
 	</script>
 	<script>
-		ALERT_API = "{% url api_dispatch_list api_name="v1" resource_name="alert" %}";
+		ALERT_API = "{% url 'api_dispatch_list' api_name='v1' resource_name='alert' %}";
 		{% if data %}
 			app = {loaded: true};
 		{% endif %}
