@@ -22,3 +22,4 @@ zope.interface==3.5.1
 django-tastypie==0.10.0
 django-tastypie-swagger==0.1.1
 git+git://github.com/PaulUithol/backbone-tastypie@84acd7b33
+git+git://github.com/dmfrancisco/django-pystache@b2a370bf1
