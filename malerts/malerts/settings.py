@@ -7,7 +7,7 @@ DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
-    ('Doug Goodwin', 'goodwindo@metro.net'),
+    ('Chris Han', 'chan@zehnergroup.com'),
 )
 
 MANAGERS = ADMINS
@@ -15,9 +15,9 @@ MANAGERS = ADMINS
 DATABASES = {
     'default': {
         'ENGINE': 'django.contrib.gis.db.backends.mysql',	# Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': 'alerts_django',							# Or path to database file if using sqlite3.
-        'USER': 'dgoodwin',									# Not used with sqlite3.
-        'PASSWORD': 'Haukola',								# Not used with sqlite3.
+        'NAME': '',							# Or path to database file if using sqlite3.
+        'USER': '',									# Not used with sqlite3.
+        'PASSWORD': '',								# Not used with sqlite3.
         'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
         'PORT': '',                      # Set to empty string for default. Not used with sqlite3.
         'OPTIONS': { 'init_command': 'SET storage_engine=MYISAM;' },	# This is SPATIAL INDEXES
